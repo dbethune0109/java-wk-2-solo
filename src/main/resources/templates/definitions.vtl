@@ -1,0 +1,17 @@
+<h1>Dictionary!</h1>
+
+#if ($words)
+  <ul>
+    #foreach ($word in $words)
+      <li><a href="/definitions/$word.getId()"> $word.getName()</a></li>
+      #foreach ($definitions in $word.getDefinitions())
+        <li> $definitions.getDescription() </a></li>
+      #end
+    #end
+  </ul>
+#else
+  <p>No Words!</p>
+#end
+
+
+<a href="/definitions/new">Add New Definition</a>
