@@ -45,7 +45,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Definitions definitions = Definitions.find(Integer.parseInt(request.params(":id")));
       model.put("Definitions", definitions);
-      model.put("template", "templates/definitions.vtl");
+      model.put("template", "templates/words.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -77,6 +77,8 @@ public class App {
       model.put("template", "templates/word.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+
 
   }
 }
